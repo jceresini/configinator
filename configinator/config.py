@@ -27,6 +27,9 @@ class Config(dict):
     def __getattr__(self, key):
         return super(Config, self).get(key)
 
+    def __repr__(self):
+        return str(self.__class__)
+
     @staticmethod
     def _not_a_dict(*_):
         raise AttributeError("This is not a dictionary")
