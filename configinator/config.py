@@ -37,7 +37,7 @@ class Config(dict):
 
     @staticmethod
     def _not_a_dict(*_):
-        raise AttributeError("This is not a dictionary")
+        raise TypeError("Config object is not subscriptable")
 
     get = __getitem__ = __setitem__ = _not_a_dict
 

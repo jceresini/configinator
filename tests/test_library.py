@@ -36,7 +36,7 @@ def test_bad_attribute():
 
 def test_use_as_dict():
     config = Config(test_config_data)
-    with pytest.raises(AttributeError):
+    with pytest.raises(TypeError):
         config['some_username']
 
 @patch("builtins.open", create=True)
