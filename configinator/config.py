@@ -27,7 +27,10 @@ class Config(dict):
     def __getattr__(self, key):
         if key not in self:
             raise AttributeError("No such attribute '{}'".format(key))
-        return super(Config, self).get(key)
+        attr = super(Config, self).get(key)
+        if isinstance(attr, dict):
+            return Config(attr)
+        return attr
 
     def __repr__(self):
         return str(self.__class__)
