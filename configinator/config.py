@@ -25,6 +25,8 @@ class Config(dict):
         super(Config, self).__init__(_translate_config_items(config))
 
     def __getattr__(self, key):
+        if key not in self:
+            raise AttributeError("No such attribute '{}'".format(key))
         return super(Config, self).get(key)
 
     def __repr__(self):
