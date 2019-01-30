@@ -1,8 +1,13 @@
+configinator
+============
+
 A simple `config` loading library. Allows access to config items using
 dot-notation, which I find easier to read. The config object can be created by
 passing a dictionary to the constructor, or via a static function that
 loads config from a json-formatted file. Also has built-in support for decoding
 base64 config items.
+
+[![Build Status](https://travis-ci.com/jceresini/configinator.svg?branch=master)](https://travis-ci.com/jceresini/configinator)
 
 ## Examples
 
